@@ -1,0 +1,19 @@
+{
+    "dev": {
+        "app_function": "casas.a",
+        "aws_region": "us-east-1",
+        "project_name": "ss",
+        "runtime": "python3.10",
+        "s3_bucket": "zappa-n79c0u0ejsss",
+        "apigateway_enabled": false,
+        "manage_roles": false,
+        "keep_warm": false,
+        "role_name": "LabRole",
+        "events": [
+            {
+                "function": "casas.py",
+                "expression": "cron(58 7 ? * THU *)"  // Ejecutar todos los días a las 8:00 UTC
+            }
+        ] 
+    }
+}
