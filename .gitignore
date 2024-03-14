@@ -1,0 +1,4 @@
+# Ignorar archivos de entorno virtual de Python (por ejemplo, venv, env, virtualenv, etc.)
+venv/
+env/
+virtualenv/
