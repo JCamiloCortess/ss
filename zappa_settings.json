@@ -4,7 +4,7 @@
         "aws_region": "us-east-1",
         "project_name": "ss",
         "runtime": "python3.10",
-        "s3_bucket": "zappa-n79c0u0ejsss",
+        "s3_bucket": "zappa-c91n5nacfss",
         "apigateway_enabled": false,
         "manage_roles": false,
         "keep_warm": false,
@@ -12,7 +12,14 @@
         "events": [
             {
                 "function": "casas.py",
-                "expression": "cron(58 7 ? * THU *)"  // Ejecutar todos los días a las 8:00 UTC
+                "expression": "cron(20 15 ? * THU *)"
+            },
+            {
+                "function": "casas.b",
+                "event_source": {
+                    "arn": "arn:aws:s3:::eltarrito",
+                    "events": ["s3:ObjectCreated:*"]
+                }
             }
         ] 
     }
